@@ -1,3 +1,0 @@
-[submodule "data/PHP-Login"]
-	path = data/PHP-Login
-	url = https://github.com/fauria/docker-lamp.git
