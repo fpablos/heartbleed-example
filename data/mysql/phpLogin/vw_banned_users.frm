@@ -1,0 +1,16 @@
+TYPE=VIEW
+query=select `phpLogin`.`phplgmember_jail`.`user_id` AS `user_id`,`phpLogin`.`phplgmember_jail`.`timestamp` AS `banned_timestamp`,`phpLogin`.`phplgmember_jail`.`banned_hours` AS `banned_hours`,(`phpLogin`.`phplgmember_jail`.`banned_hours` - (time_to_sec(timediff(now(),`phpLogin`.`phplgmember_jail`.`timestamp`)) / 3600)) AS `hours_remaining` from `phpLogin`.`phplgmember_jail`
+md5=67f7474811529d3fc05bc3c530c52e34
+updatable=1
+algorithm=0
+definer_user=
+definer_host=
+suid=2
+with_check_option=0
+timestamp=2019-10-21 20:37:28
+create-version=2
+source=SELECT\n                                        phplgmember_jail.user_id AS `user_id`,\n                                        phplgmember_jail.timestamp AS `banned_timestamp`,\n                                        phplgmember_jail.banned_hours AS `banned_hours`,\n                                        ( phplgmember_jail.banned_hours - (TIME_TO_SEC(TIMEDIFF(NOW(), phplgmember_jail.timestamp)) / 3600)) AS `hours_remaining`\n                                    FROM\n                                        phplgmember_jail
+client_cs_name=latin1
+connection_cl_name=latin1_swedish_ci
+view_body_utf8=select `phpLogin`.`phplgmember_jail`.`user_id` AS `user_id`,`phpLogin`.`phplgmember_jail`.`timestamp` AS `banned_timestamp`,`phpLogin`.`phplgmember_jail`.`banned_hours` AS `banned_hours`,(`phpLogin`.`phplgmember_jail`.`banned_hours` - (time_to_sec(timediff(now(),`phpLogin`.`phplgmember_jail`.`timestamp`)) / 3600)) AS `hours_remaining` from `phpLogin`.`phplgmember_jail`
+mariadb-version=100038
