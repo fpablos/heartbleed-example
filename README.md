@@ -20,6 +20,22 @@ Crear un contenedor en base a la imagen abriendo los puertos y exponiendo los vo
 ```bash
 docker run  -p 80:80 -p 443:443 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEVEL=debug -v ${PWD}/data/PHP-Login:/var/www/html  -v ${PWD}/data/mysql:/var/lib/mysql  --name heartbleed-server heartbleed-image-websegapp
 ```
+
+Instalar el sistema via explorador https://localhost/install y hacerlo en modo 'Automatico':
+
+```
+	- Database Hostname: localhost
+	- DB User: phplg
+	- DB Password: password1234
+	- DB Name: phpLogin
+	- DB Table Prefix: phplg
+	- Root Install Path: /var/www/html
+	- Base Url: https://localhost/
+	- Superadmin Username: admin
+	- Superadmin Email: a@a.com
+	- New Password: password1234
+	- Repeat Password: password1234
+```
 ## Verificar si el servidor es vulnerable 
 
 Con NMAP:
