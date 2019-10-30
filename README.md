@@ -24,7 +24,7 @@ docker run  -p 80:80 -p 443:443 -e LOG_STDOUT=true -e LOG_STDERR=true -e LOG_LEV
 Instalar el sistema via explorador https://localhost/install y hacerlo en modo 'Automatico':
 
 ```
-	- Database Hostname: localhost
+	- Database Hostname: 127.0.0.1
 	- DB User: phplg
 	- DB Password: password1234
 	- DB Name: phpLogin
