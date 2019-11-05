@@ -18,7 +18,7 @@ RUN apt-get install -y \
 
 WORKDIR /usr/lib/jvm
 COPY ./java .
-RUN tar -xzvf ./*.tar.gz
+RUN tar -xzvf ./*.tgz
 
 ENV PATH $PATH:/usr/lib/jvm/jdk${JAVA_VERSION}/bin:/usr/lib/jvm/jdk${JAVA_VERSION}/db/bin:/usr/lib/jvm/jdk${JAVA_VERSION}/jre/bin
 ENV J2SDKDIR /usr/lib/jvm/jdk${JAVA_VERSION}
