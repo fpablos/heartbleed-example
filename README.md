@@ -19,7 +19,7 @@ docker run  -p 443:443 --name heartbleed-server -d -it heartbleed-image-websegap
 Con NMAP:
 
 ```bash
-nmap -sV –script=ssl-heartbleed
+nmap -sV -p 443 --script ssl-heartbleed localhost
 ```
 
 Con MSF:
