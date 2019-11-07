@@ -19,6 +19,7 @@ import java.util.List;
 import static java.math.BigDecimal.TEN;
 
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("contracts")
 @JsonSerialize(using = LocalDateTimeSerializer.class)
 @Transactional
@@ -52,7 +53,11 @@ public class ContractController extends AbstractController {
     @PostMapping("/createAll")
     public ResponseEntity createAll(){
         List<Contract> contracts =  Lists.newArrayList(
-                new Contract(8L, "37896505", "Roli", "Mi Casa", LocalDate.of(2019, 11, 13), TEN, TEN, TEN)
+                new Contract(1L, "37896505", "Roli", "Mi Casa", LocalDate.of(2019, 11, 13), TEN, TEN, TEN),
+                new Contract(1L, "37896505", "Roli", "Mi Casa", LocalDate.of(2019, 11, 13), TEN, TEN, TEN),
+                new Contract(1L, "37896505", "Roli", "Mi Casa", LocalDate.of(2019, 11, 13), TEN, TEN, TEN),
+                new Contract(2L, "39267695", "Achus", "La casa de Achus", LocalDate.of(2019, 11, 13), TEN, TEN, TEN),
+                new Contract(2L, "39267695", "Achus", "La casa de Achus", LocalDate.of(2019, 11, 13), TEN, TEN, TEN)
         );
         contracts.forEach(contractRepository::save);
         return ResponseEntity.ok().build();

@@ -11,7 +11,7 @@ docker build -t heartbleed-image-websegapp .
 Crear un contenedor en base a la imagen abriendo los puertos y exponiendo los volumenes internos:
 
 ```bash
-docker run -p 8080:8080 -p 443:443 --name heartbleed-server -d -it heartbleed-image-websegapp java -Dserver.port=$PORT $JAVA_OPTS -jar target/que-me-pongo-0.0.1-SNAPSHOT.jar
+docker run  -p 443:443 --name heartbleed-server -d -it heartbleed-image-websegapp
 ```
 
 ## Verificar si el servidor es vulnerable 
@@ -19,7 +19,7 @@ docker run -p 8080:8080 -p 443:443 --name heartbleed-server -d -it heartbleed-im
 Con NMAP:
 
 ```bash
-nmap -sV –script=ssl-heartbleed
+nmap -sV -p 443 --script ssl-heartbleed localhost
 ```
 
 Con MSF:
