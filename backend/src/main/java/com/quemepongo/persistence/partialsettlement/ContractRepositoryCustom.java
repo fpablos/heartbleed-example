@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContractRepositoryCustom {
 
-    void modifyContractDate(Long contractId, String deliveryDate);
+    void modifyContractDate(Long contractId, String deliveryDate) throws Throwable;;
 }

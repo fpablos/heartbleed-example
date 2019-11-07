@@ -43,7 +43,7 @@ public class ContractController extends AbstractController {
     @PutMapping("/{contractId}")
     public ResponseEntity adjustContract(@RequestHeader(value="Authorization",required = false) String authToken,
                                          @RequestBody Contract newDate,
-                                         @PathVariable Long contractId){
+                                         @PathVariable Long contractId) throws Throwable{
             User user = getUserFromToken(authToken);
             contractRepository.modifyContractDate(contractId, newDate.getDeliveryDate());
             return ResponseEntity.ok().build();

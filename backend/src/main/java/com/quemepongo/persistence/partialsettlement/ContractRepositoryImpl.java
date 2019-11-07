@@ -13,10 +13,14 @@ public class ContractRepositoryImpl implements ContractRepositoryCustom {
 
 
     @Override
-    public void modifyContractDate(Long contractId, String deliveryDate) {
-        em
-                .createNativeQuery("UPDATE quemepongo.contracts SET delivery_date = \'" + deliveryDate + "\' WHERE id = " + contractId)
-                .executeUpdate();
+    public void modifyContractDate(Long contractId, String deliveryDate) throws Throwable{
+        try{
+            em
+                    .createNativeQuery("UPDATE quemepongo.contracts SET delivery_date = \'" + deliveryDate + "\' WHERE id = " + contractId)
+                    .executeUpdate();
+        } catch (Exception e){
+            throw new RuntimeException(e.getCause().getCause().getMessage());
+        }
     }
 }
 
